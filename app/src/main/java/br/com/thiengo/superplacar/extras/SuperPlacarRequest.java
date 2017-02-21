@@ -49,7 +49,8 @@ public class SuperPlacarRequest extends AsyncTask<Void, Void, List<Jogo>> {
                 jogos.add( jogo );
             }
 
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
 

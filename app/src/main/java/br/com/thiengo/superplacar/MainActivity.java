@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
         if( savedInstanceState != null ){
             jogos = savedInstanceState.getParcelableArrayList(Jogo.JOGOS_KEY);
-            intiViews();
+            initViews();
             retrieveJogosStream();
         }
         else{
             jogos = new ArrayList<>();
-            intiViews();
+            initViews();
             retrieveJogos();
         }
     }
@@ -41,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-    private void intiViews() {
-        super.onStart();
-
+    private void initViews() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_jogos);
         recyclerView.setHasFixedSize(true);
 

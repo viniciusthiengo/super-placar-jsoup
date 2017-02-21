@@ -49,8 +49,6 @@ public class JogosAdapter extends RecyclerView.Adapter<JogosAdapter.ViewHolder> 
             RecyclerView rv = (RecyclerView) itemView.findViewById( rvId );
             LinearLayoutManager mLayoutManager = new LinearLayoutManager( context );
             mLayoutManager.setAutoMeasureEnabled(true);
-            rv.setNestedScrollingEnabled(false);
-            rv.setHasFixedSize(false);
             rv.setLayoutManager(mLayoutManager);
             rv.setAdapter( new GoalsAdapter(context, idLayout) );
             return rv;

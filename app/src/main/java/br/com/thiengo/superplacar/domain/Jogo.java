@@ -44,7 +44,6 @@ public class Jogo implements Parcelable {
         this.inicio = inicio;
     }
 
-
     @Override
     public int describeContents() {
         return 0;

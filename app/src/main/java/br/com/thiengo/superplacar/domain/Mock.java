@@ -6,6 +6,28 @@ import java.util.List;
 
 public class Mock {
 
+    public static List<Goal> gerarGoals( int qtd ){
+        String[] times = {"16'1T", "35'1T", "01'2T", "21'2T"};
+        String[] nomes = {
+                "Fernando",
+                "Michael",
+                "Léo Castro",
+                "João Paulo"
+        };
+        List<Goal> goals = new ArrayList<>();
+
+        for( int i = 0; i < qtd; i++ ){
+            int randomPos = (int) (Math.random() * 4);
+            Goal g = new Goal();
+
+            g.setTime( times[randomPos] );
+            g.setNome( nomes[randomPos] );
+            goals.add( g );
+        }
+
+        return goals;
+    }
+
     public static Time gerarTime( int posicao ){
         String[] nomes = {"Rio Claro", "São Caetano", "S. J. Campos", "Nacional-SP"};
         String[] imagens = {
@@ -20,6 +42,7 @@ public class Mock {
         time.setNome( nomes[ posicao ] );
         time.setImagemUrl( imagens[ posicao ] );
         time.setGoals( goals[ posicao ] );
+        time.getGoalsLista().addAll( gerarGoals( goals[ posicao ] ) );
 
         return time;
     }

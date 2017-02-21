@@ -1,12 +1,16 @@
-package br.com.thiengo.superplacar.domain;
+package br.com.thiengo.superplacar.extras;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.thiengo.superplacar.domain.Goal;
+import br.com.thiengo.superplacar.domain.Jogo;
+import br.com.thiengo.superplacar.domain.Time;
+
 
 public class Mock {
 
-    public static List<Goal> gerarGoals( int qtd ){
+    public static List<Goal> gerarGoals(int qtd ){
         String[] times = {"16'1T", "35'1T", "01'2T", "21'2T"};
         String[] nomes = {
                 "Fernando",
@@ -28,7 +32,7 @@ public class Mock {
         return goals;
     }
 
-    public static Time gerarTime( int posicao ){
+    public static Time gerarTime(int posicao ){
         String[] nomes = {"Rio Claro", "São Caetano", "S. J. Campos", "Nacional-SP"};
         String[] imagens = {
             "http://www.superplacar.com.br/images/escudos/f1eab3ac03d333dc76278b2f7989bace-68.png",
@@ -47,7 +51,7 @@ public class Mock {
         return time;
     }
 
-    public static Jogo gerarJogo( int posicao ){
+    public static Jogo gerarJogo(int posicao ){
         String[] status = {"Em andamento", "Em breve", "Encerrado"};
         String[] inicios = {"16:55", "19:00", "20:00"};
         Jogo jogo = new Jogo();

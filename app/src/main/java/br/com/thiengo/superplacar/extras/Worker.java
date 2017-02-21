@@ -1,7 +1,10 @@
-package br.com.thiengo.superplacar;
+package br.com.thiengo.superplacar.extras;
 
 import android.os.SystemClock;
 import java.lang.ref.WeakReference;
+
+import br.com.thiengo.superplacar.MainActivity;
+import br.com.thiengo.superplacar.SuperPlacarRequest;
 
 
 public class Worker extends Thread {

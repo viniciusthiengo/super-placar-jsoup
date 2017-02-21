@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.thiengo.superplacar.domain.Jogo;
+import br.com.thiengo.superplacar.extras.Worker;
 
 
 public class MainActivity extends AppCompatActivity {

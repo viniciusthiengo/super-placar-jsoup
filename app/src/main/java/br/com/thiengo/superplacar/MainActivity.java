@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 import br.com.thiengo.superplacar.domain.Jogo;
+import br.com.thiengo.superplacar.extras.SuperPlacarRequest;
 import br.com.thiengo.superplacar.extras.Worker;
 
 

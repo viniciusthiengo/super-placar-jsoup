@@ -1,4 +1,4 @@
-package br.com.thiengo.superplacar;
+package br.com.thiengo.superplacar.extras;
 
 import android.os.AsyncTask;
 import org.jsoup.Jsoup;
@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.thiengo.superplacar.MainActivity;
 import br.com.thiengo.superplacar.domain.Goal;
 import br.com.thiengo.superplacar.domain.Jogo;
 import br.com.thiengo.superplacar.domain.Time;

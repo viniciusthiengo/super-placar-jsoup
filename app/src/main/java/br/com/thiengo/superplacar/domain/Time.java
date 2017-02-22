@@ -9,12 +9,12 @@ import java.util.List;
 public class Time implements Parcelable {
     private String nome;
     private String imagemUrl;
-    private int goals;
-    private List<Goal> goalsLista;
+    private int gols;
+    private List<Gol> golsLista;
 
 
     public Time(){
-        goalsLista = new ArrayList<>();
+        golsLista = new ArrayList<>();
     }
 
 
@@ -34,16 +34,16 @@ public class Time implements Parcelable {
         this.imagemUrl = imagemUrl;
     }
 
-    public int getGoals() {
-        return goals;
+    public int getGols() {
+        return gols;
     }
 
-    public void setGoals(int goals) {
-        this.goals = goals;
+    public void setGols(int gols) {
+        this.gols = gols;
     }
 
-    public List<Goal> getGoalsLista() {
-        return goalsLista;
+    public List<Gol> getGolsLista() {
+        return golsLista;
     }
 
 
@@ -56,15 +56,15 @@ public class Time implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.nome);
         dest.writeString(this.imagemUrl);
-        dest.writeInt(this.goals);
-        dest.writeTypedList(this.goalsLista);
+        dest.writeInt(this.gols);
+        dest.writeTypedList(this.golsLista);
     }
 
     protected Time(Parcel in) {
         this.nome = in.readString();
         this.imagemUrl = in.readString();
-        this.goals = in.readInt();
-        this.goalsLista = in.createTypedArrayList(Goal.CREATOR);
+        this.gols = in.readInt();
+        this.golsLista = in.createTypedArrayList(Gol.CREATOR);
     }
 
     public static final Parcelable.Creator<Time> CREATOR = new Parcelable.Creator<Time>() {

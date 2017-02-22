@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
 
         DividerItemDecoration divider = new DividerItemDecoration(
-            this,
-            mLayoutManager.getOrientation() );
+                this,
+                mLayoutManager.getOrientation() );
         recyclerView.addItemDecoration( divider );
 
         adapter = new JogosAdapter( this, jogos );

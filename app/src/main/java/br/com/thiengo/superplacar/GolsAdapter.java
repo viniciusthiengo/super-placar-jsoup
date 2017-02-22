@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
-import br.com.thiengo.superplacar.domain.Goal;
+import br.com.thiengo.superplacar.domain.Gol;
 
 
-public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> {
+public class GolsAdapter extends RecyclerView.Adapter<GolsAdapter.ViewHolder> {
     private Context context;
     private int idLayout;
-    private List<Goal> goals;
+    private List<Gol> gols;
 
     class ViewHolder extends RecyclerView.ViewHolder{
         TextView tvTime;
@@ -26,20 +26,20 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> 
             tvNome = (TextView) itemView.findViewById(R.id.tv_nome);
         }
 
-        private void setData( Goal goal ){
-            tvTime.setText( goal.getTime() );
-            tvNome.setText( goal.getNome() );
+        private void setData( Gol gol){
+            tvTime.setText( gol.getTime() );
+            tvNome.setText( gol.getNome() );
         }
     }
 
-    public GoalsAdapter(Context context, int idLayout){
+    public GolsAdapter(Context context, int idLayout){
         this.context = context;
         this.idLayout = idLayout;
-        this.goals = new ArrayList<>();
+        this.gols = new ArrayList<>();
     }
 
     @Override
-    public GoalsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GolsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater
                 .from( context )
                 .inflate( idLayout, parent, false );
@@ -49,17 +49,17 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.setData( goals.get( position ) );
+        holder.setData( gols.get( position ) );
     }
 
     @Override
     public int getItemCount() {
-        return goals.size();
+        return gols.size();
     }
 
-    public void setGoasl( List<Goal> goals ){
-        this.goals.clear();
-        this.goals.addAll( goals );
+    public void setGoasl( List<Gol> gols){
+        this.gols.clear();
+        this.gols.addAll(gols);
         notifyDataSetChanged();
     }
 }

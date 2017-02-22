@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.thiengo.superplacar.MainActivity;
-import br.com.thiengo.superplacar.domain.Goal;
+import br.com.thiengo.superplacar.domain.Gol;
 import br.com.thiengo.superplacar.domain.Jogo;
 import br.com.thiengo.superplacar.domain.Time;
 
@@ -65,23 +65,23 @@ public class SuperPlacarRequest extends AsyncTask<Void, Void, List<Jogo>> {
 
         String goalsString = timeTag.select("span.team"+indice+"-score").text();
         int goals = goalsString.isEmpty() ? 0 : Integer.parseInt( goalsString );
-        time.setGoals( goals );
+        time.setGols( goals );
 
-        time.getGoalsLista().addAll( getGoalsLista( timeTag ) );
+        time.getGolsLista().addAll( getGolsLista( timeTag ) );
         return time;
     }
 
-    private List<Goal> getGoalsLista( Element timeTag ){
-        Elements goalsLista = timeTag.select("ul.goal-players li");
-        List<Goal> goals = new ArrayList<>();
+    private List<Gol> getGolsLista(Element timeTag ){
+        Elements golsLista = timeTag.select("ul.goal-players li");
+        List<Gol> gols = new ArrayList<>();
 
-        for( int j = 0; j < goalsLista.size(); j++ ){
-            Goal goal = new Goal();
-            goal.setNome( goalsLista.get(j).select(".name").text() );
-            goal.setTime( goalsLista.get(j).select(".time").text() );
-            goals.add( goal );
+        for( Element g : golsLista ){
+            Gol gol = new Gol();
+            gol.setNome( g.select(".name").text() );
+            gol.setTime( g.select(".time").text() );
+            gols.add(gol);
         }
-        return goals;
+        return gols;
     }
 
     @Override

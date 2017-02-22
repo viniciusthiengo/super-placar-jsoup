@@ -3,14 +3,14 @@ package br.com.thiengo.superplacar.extras;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.thiengo.superplacar.domain.Goal;
+import br.com.thiengo.superplacar.domain.Gol;
 import br.com.thiengo.superplacar.domain.Jogo;
 import br.com.thiengo.superplacar.domain.Time;
 
 
 public class Mock {
 
-    public static List<Goal> gerarGoals(int qtd ){
+    public static List<Gol> gerarGoals(int qtd ){
         String[] times = {"16'1T", "35'1T", "01'2T", "21'2T"};
         String[] nomes = {
                 "Fernando",
@@ -18,18 +18,18 @@ public class Mock {
                 "Léo Castro",
                 "João Paulo"
         };
-        List<Goal> goals = new ArrayList<>();
+        List<Gol> gols = new ArrayList<>();
 
         for( int i = 0; i < qtd; i++ ){
             int randomPos = (int) (Math.random() * 4);
-            Goal g = new Goal();
+            Gol g = new Gol();
 
             g.setTime( times[randomPos] );
             g.setNome( nomes[randomPos] );
-            goals.add( g );
+            gols.add( g );
         }
 
-        return goals;
+        return gols;
     }
 
     public static Time gerarTime(int posicao ){
@@ -45,8 +45,8 @@ public class Mock {
         Time time = new Time();
         time.setNome( nomes[ posicao ] );
         time.setImagemUrl( imagens[ posicao ] );
-        time.setGoals( goals[ posicao ] );
-        time.getGoalsLista().addAll( gerarGoals( goals[ posicao ] ) );
+        time.setGols( goals[ posicao ] );
+        time.getGolsLista().addAll( gerarGoals( goals[ posicao ] ) );
 
         return time;
     }
@@ -63,8 +63,8 @@ public class Mock {
         return jogo;
     }
 
-    public static List<Jogo> gerarJogos(){
-        List<Jogo> jogos = new ArrayList<>();
+    public static ArrayList<Jogo> gerarJogos(){
+        ArrayList<Jogo> jogos = new ArrayList<>();
         jogos.add( gerarJogo(0) );
         jogos.add( gerarJogo(2) );
 

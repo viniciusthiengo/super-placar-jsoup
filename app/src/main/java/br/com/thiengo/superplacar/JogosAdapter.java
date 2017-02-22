@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import java.util.List;
-import br.com.thiengo.superplacar.domain.Goal;
+import br.com.thiengo.superplacar.domain.Gol;
 import br.com.thiengo.superplacar.domain.Jogo;
 
 
@@ -50,7 +50,7 @@ public class JogosAdapter extends RecyclerView.Adapter<JogosAdapter.ViewHolder> 
             LinearLayoutManager mLayoutManager = new LinearLayoutManager( context );
             mLayoutManager.setAutoMeasureEnabled(true);
             rv.setLayoutManager(mLayoutManager);
-            rv.setAdapter( new GoalsAdapter(context, idLayout) );
+            rv.setAdapter( new GolsAdapter(context, idLayout) );
             return rv;
         }
 
@@ -62,20 +62,20 @@ public class JogosAdapter extends RecyclerView.Adapter<JogosAdapter.ViewHolder> 
                     .load( jogo.getTime1().getImagemUrl() )
                     .into( ivTime1 );
             tvNomeTime1.setText( String.valueOf( jogo.getTime1().getNome() ) );
-            tvGoalsTime1.setText( String.valueOf( jogo.getTime1().getGoals() ) );
-            updateRecyclerView( rvTime1, jogo.getTime1().getGoalsLista() );
+            tvGoalsTime1.setText( String.valueOf( jogo.getTime1().getGols() ) );
+            updateRecyclerView( rvTime1, jogo.getTime1().getGolsLista() );
 
             Picasso.with( context )
                     .load( jogo.getTime2().getImagemUrl() )
                     .into( ivTime2 );
             tvNomeTime2.setText( String.valueOf( jogo.getTime2().getNome() ) );
-            tvGoalsTime2.setText( String.valueOf( jogo.getTime2().getGoals() ) );
-            updateRecyclerView( rvTime2, jogo.getTime2().getGoalsLista() );
+            tvGoalsTime2.setText( String.valueOf( jogo.getTime2().getGols() ) );
+            updateRecyclerView( rvTime2, jogo.getTime2().getGolsLista() );
         }
 
-        private void updateRecyclerView( RecyclerView rv, List<Goal> goals ){
-            GoalsAdapter adapter = (GoalsAdapter) rv.getAdapter();
-            adapter.setGoasl( goals );
+        private void updateRecyclerView( RecyclerView rv, List<Gol> gols){
+            GolsAdapter adapter = (GolsAdapter) rv.getAdapter();
+            adapter.setGoasl(gols);
         }
     }
 

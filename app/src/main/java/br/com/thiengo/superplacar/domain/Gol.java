@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 
-public class Goal implements Parcelable {
+public class Gol implements Parcelable {
     private String nome;
     private String time;
 
@@ -36,23 +36,23 @@ public class Goal implements Parcelable {
         dest.writeString(this.time);
     }
 
-    public Goal() {
+    public Gol() {
     }
 
-    protected Goal(Parcel in) {
+    protected Gol(Parcel in) {
         this.nome = in.readString();
         this.time = in.readString();
     }
 
-    public static final Parcelable.Creator<Goal> CREATOR = new Parcelable.Creator<Goal>() {
+    public static final Parcelable.Creator<Gol> CREATOR = new Parcelable.Creator<Gol>() {
         @Override
-        public Goal createFromParcel(Parcel source) {
-            return new Goal(source);
+        public Gol createFromParcel(Parcel source) {
+            return new Gol(source);
         }
 
         @Override
-        public Goal[] newArray(int size) {
-            return new Goal[size];
+        public Gol[] newArray(int size) {
+            return new Gol[size];
         }
     };
 }

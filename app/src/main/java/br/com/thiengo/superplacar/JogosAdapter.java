@@ -23,10 +23,10 @@ public class JogosAdapter extends RecyclerView.Adapter<JogosAdapter.ViewHolder> 
         TextView tvStatus;
         ImageView ivTime1;
         TextView tvNomeTime1;
-        TextView tvGoalsTime1;
+        TextView tvGolsTime1;
         RecyclerView rvTime1;
         ImageView ivTime2;
-        TextView tvGoalsTime2;
+        TextView tvGolsTime2;
         TextView tvNomeTime2;
         RecyclerView rvTime2;
 
@@ -36,13 +36,13 @@ public class JogosAdapter extends RecyclerView.Adapter<JogosAdapter.ViewHolder> 
             tvStatus = (TextView) itemView.findViewById(R.id.tv_status);
             ivTime1 = (ImageView) itemView.findViewById(R.id.iv_time_1);
             tvNomeTime1 = (TextView) itemView.findViewById(R.id.tv_nome_time_1);
-            tvGoalsTime1 = (TextView) itemView.findViewById(R.id.tv_goals_time_1);
-            rvTime1 = initRecyclerView( R.id.rv_goals_time_1, R.layout.item_goal_left );
+            tvGolsTime1 = (TextView) itemView.findViewById(R.id.tv_gols_time_1);
+            rvTime1 = initRecyclerView( R.id.rv_gols_time_1, R.layout.item_gol_left);
 
             ivTime2 = (ImageView) itemView.findViewById(R.id.iv_time_2);
-            tvGoalsTime2 = (TextView) itemView.findViewById(R.id.tv_goals_time_2);
+            tvGolsTime2 = (TextView) itemView.findViewById(R.id.tv_gols_time_2);
             tvNomeTime2 = (TextView) itemView.findViewById(R.id.tv_nome_time_2);
-            rvTime2 = initRecyclerView( R.id.rv_goals_time_2, R.layout.item_goal_right );
+            rvTime2 = initRecyclerView( R.id.rv_gols_time_2, R.layout.item_gol_right);
         }
 
         private RecyclerView initRecyclerView( int rvId, int idLayout ){
@@ -62,14 +62,14 @@ public class JogosAdapter extends RecyclerView.Adapter<JogosAdapter.ViewHolder> 
                     .load( jogo.getTime1().getImagemUrl() )
                     .into( ivTime1 );
             tvNomeTime1.setText( String.valueOf( jogo.getTime1().getNome() ) );
-            tvGoalsTime1.setText( String.valueOf( jogo.getTime1().getGols() ) );
+            tvGolsTime1.setText( String.valueOf( jogo.getTime1().getGols() ) );
             updateRecyclerView( rvTime1, jogo.getTime1().getGolsLista() );
 
             Picasso.with( context )
                     .load( jogo.getTime2().getImagemUrl() )
                     .into( ivTime2 );
             tvNomeTime2.setText( String.valueOf( jogo.getTime2().getNome() ) );
-            tvGoalsTime2.setText( String.valueOf( jogo.getTime2().getGols() ) );
+            tvGolsTime2.setText( String.valueOf( jogo.getTime2().getGols() ) );
             updateRecyclerView( rvTime2, jogo.getTime2().getGolsLista() );
         }
 
